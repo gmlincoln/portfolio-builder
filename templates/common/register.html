@@ -1,0 +1,79 @@
+{% extends 'common/common.html' %}
+
+
+{% block title %}
+<title>Register Page</title>
+{% endblock title %}
+
+
+{% block body %}
+
+<!-- Register Page -->
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="col-lg-4 col-md-6 col-sm-8">
+        <h2 class="text-center mb-4">Register</h2>
+        <form method="POST">
+            <!-- CSRF Token (required for Django forms) -->
+            {% csrf_token %}
+
+            <!-- User Type Selection -->
+            <div class="mb-3">
+                <label for="userType" class="form-label">User Type</label>
+                <select class="form-select" id="userType" name="user_type">
+                    <option value="admin">Admin</option>
+                    <option value="viewer">Viewer</option>
+                </select>
+            </div>
+
+            <!-- First Name Field -->
+            <div class="mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" name="first_name"
+                    placeholder="Enter your first name">
+            </div>
+
+            <!-- Last Name Field -->
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" name="last_name"
+                    placeholder="Enter your last name">
+            </div>
+
+            <!-- Username Field -->
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username">
+            </div>
+
+            <!-- Email Field -->
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+            </div>
+
+            <!-- Password Field -->
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password"
+                    placeholder="Enter your password">
+            </div>
+
+            <!-- Confirm Password Field -->
+            <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmPassword" name="confirm_password"
+                    placeholder="Confirm your password">
+            </div>
+
+            <!-- Register Button -->
+            <div class="d-grid mb-3">
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+            </div>
+
+            <!-- Login Prompt -->
+            <p class="text-center">Already have an account? <a href="#">Login</a></p>
+        </form>
+    </div>
+</div>
+
+{% endblock body %}

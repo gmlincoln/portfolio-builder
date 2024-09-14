@@ -1,0 +1,43 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <!-- Left side: Logo -->
+        <a class="navbar-brand" href="#">
+            <img src="{% static 'img/admin.png' %}" alt="Logo" width="100" height="50">
+        </a>
+
+        <!-- Navbar toggler for small screens -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Right side: Menu -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <!-- Add Resume Link -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Add Resume</a>
+                </li>
+
+                <!-- Resume List Link -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Resume List</a>
+                </li>
+
+                <!-- User Profile Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        {{user.first_name}} {{user.last_name}}
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+                        <li><a class="dropdown-item" href="{% url 'logoutPage' %}">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
